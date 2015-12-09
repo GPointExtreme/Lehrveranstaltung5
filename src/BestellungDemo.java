@@ -5,10 +5,8 @@ public class BestellungDemo {
 		// TODO Auto-generated method stub
 		Bestellzeile[] computer = new Bestellzeile[2];
 	
-		Bestellzeile asus = new Bestellzeile("Asus", 2, 400);
-		computer[0] = asus;
-		Bestellzeile dell = new Bestellzeile("Dell", 4, 500);
-		computer[1] = dell;
+		computer[0] = new Bestellzeile("Asus", 2, 400);
+		computer[1] = new Bestellzeile("Dell", 4, 500);
 		
 		Bestellung myBestellung = new Bestellung("1", computer);
 		myBestellung.printBestellung();
