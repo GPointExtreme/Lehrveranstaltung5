@@ -23,6 +23,8 @@ public class Bestellzeile {
 		return preis;
 	}
 	
-	public double 
+	public double getKosten() {
+		return getMenge()*getPreis();
+	}
 
 }
