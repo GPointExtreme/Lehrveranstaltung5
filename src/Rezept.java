@@ -1,15 +1,15 @@
 
 public class Rezept {
 	
-	private String name;
-	private byte personen;
-	private String[] zutaten;
-	private int[]menge;
+	//Warum public?
+	public String name;
+	public byte personen;
+	public Zutat[] zutat;
 	
-	public Rezept(String name, byte personen, String[] zutaten) {
+	public Rezept(String name, byte personen, Zutat[] zutat) {
 		this.name = name;
 		this.personen = personen;
-		this.zutaten = zutaten;
+		this.zutat = zutat;
 	}
 
 	public String getName() {
@@ -20,13 +20,41 @@ public class Rezept {
 		return personen;
 	}
 
-	public String[] getZutaten() {
-		return zutaten;
+	public Zutat[] getZutat() {
+		return zutat;
 	}
 	
 	public void printRezept() {
-		System.out.println("Rezeptname: " + getName());
-		System.out.println("Rezeptname: " + getName());
+		Rezept printRezept = umrechnen(getPersonen());
+
+		System.out.println("Rezeptname= " + printRezept.getName());
+		System.out.println("Personen= " + printRezept.getPersonen());
+		
+		Zutat[] rezeptzutaten = printRezept.getZutat();
+		
+		for (int i = 0; i < rezeptzutaten.length; i++) {
+			Zutat zutat2 = rezeptzutaten[i];
+			System.out.print("Name der Zutat= " + zutat2.getName() + ", ") ;
+			System.out.println("Menge der Zutat= " + zutat2.getMenge());
+		}
+	}
+	
+	public Rezept umrechnen(int personen) {
+		byte personenTee = (byte) personen;
+		Zutat[] zutaten1 = getZutat();
+		Zutat[] zutatenpersonen= new Zutat[zutaten1.length];
+
+		for (int i = 0; i < zutaten1.length; i++) {
+			Zutat zutatenKlasse = zutaten1[i];
+
+			int menge = zutatenKlasse.getMenge();
+			menge = menge * personen;
+
+			Zutat neu=new Zutat(zutatenKlasse.getName(), menge);
+			zutatenpersonen[i]=neu;	
+		}
+		Rezept myrezept = new Rezept(getName(), personenTee, zutatenpersonen);
+		return myrezept;
 	}
 
 }
