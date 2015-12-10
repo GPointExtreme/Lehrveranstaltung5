@@ -11,5 +11,14 @@ public class ArrayToolsDemo {
 		for (int i = 0; i < array.length; i++) {
 			System.out.println(array[i]);
 		}
+		System.out.println("----------------");
+		
+		int array3[] = {1, 2, 3, 2, 3, 4};
+		
+		int array4[] = ArrayTools.distinct(array3);
+		for (int i = 0; i < array4.length; i++) {
+			System.out.println(array4[i]);
+		}
+		System.out.println("----------------");
 	}
 }
