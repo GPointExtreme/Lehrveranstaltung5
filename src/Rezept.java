@@ -39,7 +39,7 @@ public class Rezept {
 		}
 	}
 	
-	public Rezept umrechnen(int personen) {
+	public Rezept umrechnen(byte personen) {
 		byte personenTee = (byte) personen;
 		Zutat[] zutaten1 = getZutat();
 		Zutat[] zutatenpersonen= new Zutat[zutaten1.length];

@@ -6,16 +6,10 @@ public class RezeptDemo {
 		byte personenTee = 5;
 		Zutat[] zutatenTee = new Zutat[3];
 
-		Zutat zutatteeblaetter = new Zutat("Teeblaetter", 10);
-		zutatenTee[0] = zutatteeblaetter;
-
-		Zutat zutatwasser = new Zutat("Wasser", 500);
-		zutatenTee[1] = zutatwasser;
-
-		Zutat zutatzucker = new Zutat("Zucker", 100);
-		zutatenTee[2] = zutatzucker;
+		zutatenTee[0] = new Zutat("Teeblaetter", 10);
+		zutatenTee[1] = new Zutat("Wasser", 500);
+		zutatenTee[2] = new Zutat("Zucker", 100);
 		
-
 		Rezept myrezept = new Rezept("Tee", personenTee, zutatenTee);
 		
 		myrezept.printRezept();
