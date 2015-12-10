@@ -46,11 +46,18 @@ public class ArrayTools {
 	return array;
 	}
 
+	//Überprüft ob Array aufsteigend sortiert ist.
 	public static boolean isSorted(int[] data) {
+		int var = 1;
+		for(int i = 0; i < data.length; i++) {
+			if(var == data[i]) {
+				var++;
+				continue;
+			}
+			else return false;
+		}
 
-	// Hier sollte Ihr Code stehen
-
-	return false; // <-- Vergessen Sie nicht, Ihr Ergebnis zu retournieren
+	return true; 
 	}
 
 	public static Statistik[] createStatistic(int[] data) {

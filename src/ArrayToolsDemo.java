@@ -20,5 +20,11 @@ public class ArrayToolsDemo {
 			System.out.println(array4[i]);
 		}
 		System.out.println("----------------");
+		
+		int array5[] = {1, 2, 3, 2, 3, 4};
+		System.out.println(ArrayTools.isSorted(array5));
+		
+		int array6[] = {1, 2, 3, 4, 5, 6};
+		System.out.println(ArrayTools.isSorted(array6));
 	}
 }
